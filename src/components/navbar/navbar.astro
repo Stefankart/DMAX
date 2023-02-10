@@ -5,15 +5,8 @@ import Dropdown from "./dropdown.astro";
 import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
 
 const menuitems = [
-  {
-    title: "Features",
-    path: "#",
-    children: [
-      { title: "Action", path: "#" },
-      { title: "Another action", path: "#" },
-      { title: "Dropdown Submenu", path: "#" },
-    ],
-  },
+
+
   {
     title: "Pricing",
     path: "/pricing",
@@ -23,8 +16,8 @@ const menuitems = [
     path: "/about",
   },
   {
-    title: "Blog",
-    path: "/blog",
+    title: "Case Study",
+    path: "/",
   },
   {
     title: "Contact",
@@ -38,8 +31,8 @@ const menuitems = [
     <Astronav>
       <div class="flex w-full lg:w-auto items-center justify-between">
         <a href="/" class="text-lg"
-          ><span class="font-bold text-slate-800">Astro</span><span
-            class="text-slate-500">ship</span
+          ><span class="font-bold text-slate-800">Content Growth </span><span
+            class="text-slate-500"> Agency</span
           >
         </a>
         <div class="block lg:hidden">
@@ -51,15 +44,8 @@ const menuitems = [
           {
             menuitems.map((item, index) => (
               <>
-                {item.children && (
-                  <Dropdown
-                    title={item.title}
-                    children={item.children}
-                    lastItem={index === menuitems.length - 1}
-                  />
-                )}
 
-                {!item.children && (
+                {(
                   <li>
                     <a
                       href={item.path}
@@ -80,8 +66,8 @@ const menuitems = [
     </Astronav>
     <div>
       <div class="hidden lg:flex items-center gap-4">
-        <a href="#">Log in</a>
-        <Link href="#" size="md">Sign up</Link>
+       
+        <Link href="/pricing" size="md">Get Started</Link>
       </div>
     </div>
   </header>
